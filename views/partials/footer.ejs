@@ -1,0 +1,29 @@
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="site-foot__in">
+      <div>
+        <h2><%= c.brand.name %></h2>
+        <p><%= c.brand.tagline %> <%= c.brand.positioning %></p>
+      </div>
+      <nav aria-label="Product">
+        <a href="/features#description">Detailed description</a>
+        <a href="/features#specifications">Technical specifications</a>
+        <a href="/features#usage">Usage scenarios</a>
+        <a href="/features#faq">Questions</a>
+      </nav>
+      <nav aria-label="Shop">
+        <a href="/cart">Your bag</a>
+        <a href="mailto:<%= c.brand.supportEmail %>"><%= c.brand.supportEmail %></a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© <%= year %> <%= c.brand.legalName %></span>
+      <span>Payments secured by Stripe</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" data-toast role="status" aria-live="polite"></div>
+<script src="/js/cart.js" defer></script>
+</body>
+</html>

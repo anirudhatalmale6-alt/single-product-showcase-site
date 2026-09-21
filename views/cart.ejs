@@ -1,0 +1,71 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main id="main" class="wrap">
+
+  <section class="page-head">
+    <p class="eyebrow">Step 1 of 3 — your bag</p>
+    <h1 class="display">Your bag</h1>
+  </section>
+
+  <!-- Shown when the bag has something in it -->
+  <div class="cart-grid" data-cart-full hidden>
+    <div>
+      <article class="line">
+        <div class="line__thumb">
+          <picture>
+            <source srcset="<%= c.product.images.hero.src1x %>" type="image/webp">
+            <img src="<%= c.product.images.hero.fallback %>" alt="<%= c.product.images.hero.alt %>" width="96" height="213">
+          </picture>
+        </div>
+        <div>
+          <h2><%= c.product.name %></h2>
+          <p class="line__meta"><%= c.product.subtitle %> · <%= c.product.volume %> · <%= c.product.sku %></p>
+          <div class="line__foot">
+            <div class="qty" role="group" aria-label="Quantity">
+              <button type="button" data-qty-dec aria-label="Decrease quantity">−</button>
+              <output data-qty-out aria-live="polite">1</output>
+              <button type="button" data-qty-inc aria-label="Increase quantity">+</button>
+            </div>
+            <span class="line__price" data-line-total><%= money(c.product.priceMinor) %></span>
+          </div>
+        </div>
+      </article>
+
+      <p class="lede"><a class="link-u" href="/features">← Keep reading the spec</a></p>
+    </div>
+
+    <aside class="summary">
+      <h2>Summary</h2>
+      <dl>
+        <div>
+          <dt>Subtotal</dt>
+          <dd data-sum-subtotal><%= money(c.product.priceMinor) %></dd>
+        </div>
+        <div>
+          <dt>Delivery</dt>
+          <dd data-sum-shipping><%= money(c.product.shippingMinor) %></dd>
+        </div>
+        <div class="tot">
+          <dt>Total</dt>
+          <dd data-sum-total><%= money(c.product.priceMinor + c.product.shippingMinor) %></dd>
+        </div>
+      </dl>
+      <p class="ship-nudge" data-ship-nudge hidden></p>
+      <button class="btn btn--accent btn--block" data-checkout>Checkout</button>
+      <ul class="trust">
+        <% c.checkout.trustPoints.forEach(function (t) { %><li><%= t %></li><% }) %>
+      </ul>
+      <p class="form-error" data-checkout-error hidden></p>
+    </aside>
+  </div>
+
+  <!-- Shown when the bag is empty -->
+  <div class="empty" data-cart-empty>
+    <p class="lede">There is nothing in your bag yet.</p>
+    <a class="btn btn--accent" href="/">Take a look at <%= c.product.name %></a>
+  </div>
+
+</main>
+
+<%- include('partials/footer') %>

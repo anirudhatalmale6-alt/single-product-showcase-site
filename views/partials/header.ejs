@@ -1,0 +1,13 @@
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brandmark" href="/"><%= c.brand.shortName %> <span>&amp;</span> CO.</a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/features" <%= path === '/features' ? 'aria-current="page"' : '' %>>Features</a>
+      <a class="nav__link--muted" href="/features#specifications">Specifications</a>
+      <a class="nav__link--muted" href="/features#usage">Uses</a>
+      <a class="bag" href="/cart" data-bag data-empty="true" aria-label="Your bag">
+        Bag <span class="bag__count" data-bag-count>0</span>
+      </a>
+    </nav>
+  </div>
+</header>

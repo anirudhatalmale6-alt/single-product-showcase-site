@@ -1,0 +1,91 @@
+<%- include('partials/head') %>
+<div class="demo-banner">
+  <b>DEMO CHECKOUT</b> — Stripe is not connected yet, so no card is requested and no payment is taken.
+  Add your Stripe keys and this page is replaced by Stripe's own hosted checkout.
+</div>
+<%- include('partials/header') %>
+
+<main id="main" class="wrap">
+
+  <section class="page-head">
+    <p class="eyebrow">Step 2 of 3 — checkout</p>
+    <h1 class="display">Checkout</h1>
+  </section>
+
+  <div class="cart-grid">
+    <form method="post" action="/checkout/demo" novalidate>
+      <input type="hidden" name="qty" value="<%= qty %>">
+
+      <% if (typeof error !== 'undefined' && error) { %>
+        <p class="form-error"><%= error %></p>
+      <% } %>
+
+      <div class="buy">
+        <p class="eyebrow">Contact</p>
+        <div class="field">
+          <label for="email">Email — your confirmation goes here</label>
+          <input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com">
+        </div>
+
+        <p class="eyebrow">Delivery address</p>
+        <div class="field">
+          <label for="name">Full name</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="line1">Address line 1</label>
+          <input id="line1" name="line1" autocomplete="address-line1">
+        </div>
+        <div class="field">
+          <label for="line2">Address line 2</label>
+          <input id="line2" name="line2" autocomplete="address-line2">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="city">City</label>
+            <input id="city" name="city" autocomplete="address-level2">
+          </div>
+          <div class="field">
+            <label for="postcode">Postcode / ZIP</label>
+            <input id="postcode" name="postcode" autocomplete="postal-code">
+          </div>
+        </div>
+        <div class="field">
+          <label for="country">Country</label>
+          <input id="country" name="country" autocomplete="country-name">
+        </div>
+
+        <div class="gateway-slot">
+          <p class="eyebrow">Card details</p>
+          <p>Stripe's hosted payment form appears here once your keys are connected. Nothing on this page collects card data — that is the point of using Stripe Checkout.</p>
+        </div>
+
+        <button class="btn btn--accent btn--block" type="submit">Place order — <%= money(totals.totalMinor) %></button>
+      </div>
+    </form>
+
+    <aside class="summary">
+      <h2>Order summary</h2>
+      <dl>
+        <div>
+          <dt><%= qty %> × <%= c.product.name %></dt>
+          <dd><%= money(totals.subtotalMinor) %></dd>
+        </div>
+        <div>
+          <dt>Delivery</dt>
+          <dd><%= totals.shippingMinor ? money(totals.shippingMinor) : 'Free' %></dd>
+        </div>
+        <div class="tot">
+          <dt>Total</dt>
+          <dd><%= money(totals.totalMinor) %></dd>
+        </div>
+      </dl>
+      <ul class="trust">
+        <% c.checkout.trustPoints.forEach(function (t) { %><li><%= t %></li><% }) %>
+      </ul>
+    </aside>
+  </div>
+
+</main>
+
+<%- include('partials/footer') %>

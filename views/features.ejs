@@ -1,0 +1,156 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main id="main">
+
+  <section class="wrap page-head">
+    <p class="eyebrow">Product features — <%= c.product.sku %></p>
+    <h1 class="display"><%= c.product.name %>,<br>in <em>full</em>.</h1>
+    <p class="lede narrow"><%= c.features.intro %></p>
+  </section>
+
+  <div class="wrap">
+    <div class="feat">
+
+      <!-- sticky section index -->
+      <aside class="feat__index">
+        <nav aria-label="Sections on this page">
+          <ol>
+            <li><a href="#description" data-spy="description"><em>01</em> Detailed description</a></li>
+            <li><a href="#specifications" data-spy="specifications"><em>02</em> Technical specifications</a></li>
+            <li><a href="#usage" data-spy="usage"><em>03</em> Usage scenarios</a></li>
+            <li><a href="#faq" data-spy="faq"><em>04</em> Questions</a></li>
+          </ol>
+        </nav>
+      </aside>
+
+      <div>
+
+        <!-- ------------------------------------------- 01 description --- -->
+        <section class="feat__block" id="description">
+          <header>
+            <p class="eyebrow"><%= c.features.detail.eyebrow %></p>
+            <h2 class="display"><%= c.features.detail.title %></h2>
+            <p class="lede"><%= c.features.detail.lede %></p>
+          </header>
+
+          <% c.features.detail.blocks.forEach(function (b) { %>
+            <article class="drow" data-rise>
+              <div>
+                <h3><%= b.heading %></h3>
+                <p><%= b.body %></p>
+              </div>
+              <div class="drow__media">
+                <img src="<%= b.image %>" alt="<%= b.imageAlt %>" loading="lazy" decoding="async"
+                     width="<%= b.imageWidth || 585 %>" height="<%= b.imageHeight || 510 %>">
+              </div>
+            </article>
+          <% }) %>
+        </section>
+
+        <!-- ---------------------------------------- 02 specifications --- -->
+        <section class="feat__block" id="specifications">
+          <header>
+            <p class="eyebrow"><%= c.features.specs.eyebrow %></p>
+            <h2 class="display"><%= c.features.specs.title %></h2>
+          </header>
+
+          <% if (c.features.specs.note) { %>
+            <p class="spec-note"><%= c.features.specs.note %></p>
+          <% } %>
+
+          <div class="specs">
+            <% c.features.specs.groups.forEach(function (g) { %>
+              <div class="specgroup" data-rise>
+                <h4><%= g.group %></h4>
+                <table>
+                  <tbody>
+                    <% g.rows.forEach(function (r) { %>
+                      <tr><th scope="row"><%= r[0] %></th><td><%= r[1] %></td></tr>
+                    <% }) %>
+                  </tbody>
+                </table>
+              </div>
+            <% }) %>
+          </div>
+        </section>
+
+        <!-- ------------------------------------------------ 03 usage --- -->
+        <section class="feat__block" id="usage">
+          <header>
+            <p class="eyebrow"><%= c.features.usage.eyebrow %></p>
+            <h2 class="display"><%= c.features.usage.title %></h2>
+            <p class="lede"><%= c.features.usage.lede %></p>
+          </header>
+
+          <div class="scenarios">
+            <% c.features.usage.scenarios.forEach(function (s, i) { %>
+              <article class="scenario" data-rise>
+                <p class="scenario__tag"><i><%= String(i + 1).padStart(2, '0') %></i> <%= s.tag %></p>
+                <div>
+                  <h3><%= s.title %></h3>
+                  <p><%= s.body %></p>
+                </div>
+                <div>
+                  <span class="scenario__metric"><%= s.metric %></span>
+                  <ol>
+                    <% s.steps.forEach(function (st) { %><li><%= st %></li><% }) %>
+                  </ol>
+                </div>
+              </article>
+            <% }) %>
+          </div>
+        </section>
+
+        <!-- -------------------------------------------------- 04 faq --- -->
+        <section class="feat__block" id="faq">
+          <header>
+            <p class="eyebrow">04 — Questions</p>
+            <h2 class="display">Before you ask</h2>
+          </header>
+          <div class="faq">
+            <% c.features.faq.forEach(function (f) { %>
+              <details>
+                <summary><%= f.q %></summary>
+                <p><%= f.a %></p>
+              </details>
+            <% }) %>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------ buy again --- -->
+  <section class="sec sec--sunk">
+    <div class="wrap cart-grid">
+      <div data-rise>
+        <p class="eyebrow">Order</p>
+        <h2 class="display">Read enough?</h2>
+        <p class="lede"><%= c.product.name %> — <%= c.product.subtitle %>, <%= c.product.volume %>. <%= c.product.stockNote %>.</p>
+      </div>
+
+      <div class="buy" data-rise>
+        <div class="buy__price">
+          <strong><%= money(c.product.priceMinor) %></strong>
+          <% if (c.product.compareAtMinor && c.product.compareAtMinor > c.product.priceMinor) { %>
+            <s><%= money(c.product.compareAtMinor) %></s>
+          <% } %>
+        </div>
+        <div class="qty" role="group" aria-label="Quantity">
+          <button type="button" data-qty-dec aria-label="Decrease quantity">−</button>
+          <output data-qty-out aria-live="polite">1</output>
+          <button type="button" data-qty-inc aria-label="Increase quantity">+</button>
+        </div>
+        <button class="btn btn--accent btn--block" data-add-to-bag data-use-qty>Add to bag</button>
+        <ul class="trust">
+          <% c.checkout.trustPoints.forEach(function (t) { %><li><%= t %></li><% }) %>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('partials/footer') %>

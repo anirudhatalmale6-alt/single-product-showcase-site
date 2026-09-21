@@ -1,0 +1,77 @@
+<%- include('partials/head') %>
+<% if (order.mode === 'demo' || order.mode === 'test') { %>
+<div class="demo-banner">
+  <b><%= order.mode === 'demo' ? 'DEMO ORDER' : 'STRIPE TEST MODE' %></b> —
+  no real payment was taken and nothing will be dispatched.
+</div>
+<% } %>
+<%- include('partials/header') %>
+
+<main id="main" class="wrap">
+
+  <section class="page-head">
+    <p class="eyebrow">Step 3 of 3 — confirmed</p>
+    <div class="confirm-mark" aria-hidden="true"></div>
+    <h1 class="display">Thank you.<br>Your order is <em>confirmed</em>.</h1>
+    <p class="lede narrow">
+      A confirmation has been sent to <strong><%= order.email %></strong>.
+      Keep reference <strong><%= order.ref %></strong> if you need to get in touch.
+    </p>
+  </section>
+
+  <div class="cart-grid">
+    <div>
+      <p class="eyebrow">What happens next</p>
+      <br>
+      <ol class="next-steps">
+        <li>You will get a confirmation email within a minute or two — check spam if it is not there.</li>
+        <li>We pack and dispatch within one business day, Monday to Friday.</li>
+        <li>A dispatch note with tracking follows as soon as it leaves us.</li>
+        <li>Anything at all, reply to the confirmation email or write to <a class="link-u" href="mailto:<%= c.brand.supportEmail %>"><%= c.brand.supportEmail %></a>.</li>
+      </ol>
+      <br>
+      <p><a class="btn btn--ghost" href="/">Back to <%= c.brand.shortName %></a></p>
+    </div>
+
+    <aside class="receipt">
+      <div class="receipt__head">
+        <div>
+          <p class="eyebrow">Order reference</p>
+          <p class="receipt__ref"><%= order.ref %></p>
+        </div>
+        <p class="eyebrow"><%= new Date(order.placedAt).toUTCString() %></p>
+      </div>
+
+      <dl>
+        <div>
+          <dt><%= order.qty %> × <%= order.productName %></dt>
+          <dd><%= order.currencySymbol %><%= (order.subtotalMinor / 100).toFixed(2) %></dd>
+        </div>
+        <% if (order.discountMinor) { %>
+        <div>
+          <dt>Discount</dt>
+          <dd>−<%= order.currencySymbol %><%= (order.discountMinor / 100).toFixed(2) %></dd>
+        </div>
+        <% } %>
+        <div>
+          <dt>Delivery</dt>
+          <dd><%= order.shippingMinor ? order.currencySymbol + (order.shippingMinor / 100).toFixed(2) : 'Free' %></dd>
+        </div>
+        <div class="tot">
+          <dt>Total paid</dt>
+          <dd><%= order.currencySymbol %><%= (order.totalMinor / 100).toFixed(2) %> <%= order.currency %></dd>
+        </div>
+      </dl>
+
+      <% if (order.address) { %>
+        <div>
+          <p class="eyebrow">Delivering to</p>
+          <dl><div><dt><%= order.name %></dt><dd><%= order.address %></dd></div></dl>
+        </div>
+      <% } %>
+    </aside>
+  </div>
+
+</main>
+
+<%- include('partials/footer') %>

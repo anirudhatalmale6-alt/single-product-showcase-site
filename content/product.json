@@ -1,0 +1,207 @@
+{
+  "_readme": "THIS FILE IS THE ONLY FILE YOU NEED TO EDIT TO CHANGE COPY, IMAGES OR PRICE. Save it and refresh the browser - no rebuild, no deploy step. See README.md section 'Editing the site'.",
+  "brand": {
+    "name": "ALCHEMY & CO.",
+    "shortName": "ALCHEMY",
+    "tagline": "Craft chemistry, perfected.",
+    "positioning": "One bottle. One job. Done properly.",
+    "supportEmail": "orders@example.com",
+    "legalName": "Alchemy & Co. Ltd",
+    "address": "PLACEHOLDER - your registered address",
+    "instagram": "",
+    "url": "http://localhost:3000"
+  },
+  "product": {
+    "sku": "ALC-ML-258",
+    "name": "Magical Liquid",
+    "subtitle": "Slime Activator",
+    "volume": "258 mL",
+    "priceMinor": 1290,
+    "currency": "usd",
+    "currencySymbol": "$",
+    "compareAtMinor": 1690,
+    "shippingMinor": 495,
+    "freeShippingOverMinor": 3500,
+    "maxQty": 10,
+    "inStock": true,
+    "stockNote": "In stock — dispatched within 1 business day",
+    "shortDescription": "A single-step activator that turns ordinary PVA glue into stretchable, non-sticky slime. No borax powder to measure. No contact-lens solution. No baking soda. One bottle, one pour.",
+    "heroHeadline": "The one bottle\nthat does the\nwhole job.",
+    "heroSub": "Magical Liquid replaces the three-ingredient guesswork of slime-making with a single measured pour. Consistent every time, child-friendly, and washable.",
+    "images": {
+      "hero": {
+        "src1x": "/img/product-1x.webp",
+        "src2x": "/img/product-2x.webp",
+        "fallback": "/img/product-1x.png",
+        "width": 196,
+        "height": 429,
+        "alt": "A 258 mL bottle of Magical Liquid slime activator with an orange cap"
+      }
+    },
+    "marquee": ["Washable", "Child friendly", "258 mL", "No borax powder", "Works with any PVA glue", "1-step activation" ]
+  },
+  "features": {
+    "intro": "Everything below is the product, in full. Read the part you need — the page is built so you can jump straight to it.",
+    "detail": {
+      "eyebrow": "01 — Detailed description",
+      "title": "What it is, and what it actually does",
+      "lede": "Magical Liquid is a buffered borate solution engineered to cross-link polyvinyl acetate — the polymer in ordinary white school glue — into a stable, elastic gel. That is the whole of slime chemistry, and this bottle is the whole of the recipe.",
+      "blocks": [
+        {
+          "heading": "One pour replaces three ingredients",
+          "body": "The usual kitchen method asks for baking soda, contact lens solution and a lot of hope. Each is doing a separate job, and each is easy to get wrong — too little and the mix stays sticky, too much and it snaps like putty. Magical Liquid is pre-buffered, so the alkalinity and the cross-linker arrive together in the correct ratio. You pour, you stir, it works.",
+          "image": "/img/detail-label.webp",
+          "imageAlt": "Close crop of the printed front label",
+          "imageWidth": 585,
+          "imageHeight": 510
+        },
+        {
+          "heading": "Consistent from the first batch to the last",
+          "body": "Because the ratio is fixed in the bottle rather than in the bowl, batch two comes out like batch one. That matters more than it sounds: it is the difference between a classroom of thirty working slimes and a classroom of thirty different failures, and it is why this is the format we sell.",
+          "image": "/img/detail-cap.webp",
+          "imageAlt": "Close crop of the flip-top dispensing cap",
+          "imageWidth": 570,
+          "imageHeight": 420
+        },
+        {
+          "heading": "Made to be handled by children",
+          "body": "Washable from skin, from clothes and from most hard surfaces with warm water. The flip-top cap meters the pour so a tipped bottle does not empty itself across a table. Adult supervision is still the rule — this is a craft chemical, not a toy — but it is formulated on the assumption that small hands will be holding it.",
+          "image": "/img/detail-base.webp",
+          "imageAlt": "Close crop of the volume marking and fine print",
+          "imageWidth": 585,
+          "imageHeight": 360
+        }
+      ]
+    },
+    "specs": {
+      "eyebrow": "02 — Technical specifications",
+      "title": "The numbers",
+      "note": "PLACEHOLDER VALUES. Replace every figure in this table with the real values from your supplier's spec sheet before you take live payments.",
+      "groups": [
+        {
+          "group": "Physical",
+          "rows": [
+            ["Net volume", "258 mL / 8.7 fl oz"],
+            ["Form", "Clear low-viscosity liquid"],
+            ["Viscosity @ 20 °C", "3–6 mPa·s"],
+            ["Density", "1.02 g/cm³"],
+            ["pH", "8.2 – 8.8"],
+            ["Colour", "Colourless to faint straw"],
+            ["Odour", "Effectively none"]
+          ]
+        },
+        {
+          "group": "Composition",
+          "rows": [
+            ["Base", "Purified water"],
+            ["Active", "Buffered sodium borate solution"],
+            ["Preservative system", "Yes"],
+            ["Added fragrance", "None"],
+            ["Added colourant", "None"]
+          ]
+        },
+        {
+          "group": "Use & yield",
+          "rows": [
+            ["Dosage", "≈ 1 tsp (5 mL) per 120 mL PVA glue"],
+            ["Yield", "Up to 40 standard batches"],
+            ["Working time", "Stir 30–60 s, rest 2 min"],
+            ["Compatible with", "Any PVA / white school glue, clear or opaque"],
+            ["Not compatible with", "Solvent-based adhesives, epoxies"]
+          ]
+        },
+        {
+          "group": "Storage & life",
+          "rows": [
+            ["Shelf life, unopened", "24 months"],
+            ["Shelf life, opened", "12 months"],
+            ["Storage temperature", "5 – 30 °C"],
+            ["Keep away from", "Direct sunlight, frost"]
+          ]
+        },
+        {
+          "group": "Packaging",
+          "rows": [
+            ["Bottle", "HDPE, recyclable"],
+            ["Closure", "Polypropylene flip-top, metered"],
+            ["Label", "Bilingual EN / FR"],
+            ["Unit weight", "≈ 290 g"],
+            ["Case pack", "12 units"]
+          ]
+        },
+        {
+          "group": "Compliance",
+          "rows": [
+            ["Safety datasheet", "Supplied on request"],
+            ["Age guidance", "3+ with adult supervision"],
+            ["Washability", "Washable from skin and most fabrics"],
+            ["Country of origin", "PLACEHOLDER"]
+          ]
+        }
+      ]
+    },
+    "usage": {
+      "eyebrow": "03 — Usage scenarios",
+      "title": "Where a bottle like this actually earns its place",
+      "lede": "Five situations we hear about constantly. If yours is on this list, the 258 mL bottle is almost certainly the right size to start with.",
+      "scenarios": [
+        {
+          "tag": "Classroom",
+          "title": "Thirty children, forty minutes, one adult",
+          "body": "A single bottle covers a full class set with room to spare, and because the ratio is fixed you are not running between tables rescuing sticky bowls. Teachers tend to buy it for the predictability rather than the chemistry.",
+          "metric": "≈ 40 batches per bottle",
+          "steps": ["Pre-measure glue into cups", "One metered pour per cup", "Stir 30 s, rest 2 min", "Knead to finish" ]
+        },
+        {
+          "tag": "At home",
+          "title": "A rainy Saturday that does not end in tears",
+          "body": "The failure mode of kitchen slime is a bowl of sticky white mess and a disappointed child. Removing the measuring step removes the failure. Washable formula means the kitchen table survives too.",
+          "metric": "Two-ingredient method",
+          "steps": ["Glue into a bowl", "Add Magical Liquid", "Stir until it pulls away", "Knead until smooth" ]
+        },
+        {
+          "tag": "Sensory & OT",
+          "title": "Sensory play and occupational therapy",
+          "body": "Consistent texture batch to batch is the point here — a predictable resistance you can rely on session after session. Unscented and uncoloured by design, so it does not fight with sensory sensitivities.",
+          "metric": "Unscented, uncoloured",
+          "steps": ["Make to standard ratio", "Adjust firmness with a few extra drops", "Store airtight between sessions" ]
+        },
+        {
+          "tag": "Makers",
+          "title": "Content, kits and craft markets",
+          "body": "If you are producing slime to sell or to film, the variable you cannot afford is the batch that comes out wrong on camera. Fixed ratio, repeatable result, and a case pack that keeps the unit cost sensible.",
+          "metric": "12-unit case pack",
+          "steps": ["Scale the ratio linearly", "Mix in batches of 1 L", "Rest before packing" ]
+        },
+        {
+          "tag": "Parties",
+          "title": "Party stations and holiday clubs",
+          "body": "A station that runs itself. Pre-portion the glue, hand over the bottle with an adult on it, and the activity paces itself at roughly three minutes a child.",
+          "metric": "≈ 3 min per child",
+          "steps": ["Pre-portion glue cups", "One adult on the bottle", "Rotate children through", "Bag and label to take home" ]
+        }
+      ]
+    },
+    "faq": [
+      {
+        "q": "Does it work with clear glue as well as white?",
+        "a": "Yes. Clear PVA gives a glass-like slime and usually wants a slightly longer rest before kneading."
+      },
+      {
+        "q": "What if the slime is still sticky?",
+        "a": "Add a few more drops and keep kneading. Stickiness is almost always under-activation, not over-activation."
+      },
+      {
+        "q": "What if it has gone rubbery?",
+        "a": "Too much activator. A little warm water worked in by hand will bring it back most of the time."
+      },
+      {
+        "q": "Is it safe on skin?",
+        "a": "It is formulated for supervised craft use from age 3. Wash hands after handling and keep it out of eyes and mouths."
+      }
+    ]
+  },
+  "checkout": {
+    "trustPoints": ["Payments processed by Stripe — card details never touch this server", "Dispatched within 1 business day", "30-day returns on unopened bottles" ]
+  }
+}

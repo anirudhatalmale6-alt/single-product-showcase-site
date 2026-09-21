@@ -1,0 +1,136 @@
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+<main id="main">
+
+  <!-- ---------------------------------------------------------- hero --- -->
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <div class="hero__kicker">
+          <p class="eyebrow"><%= c.product.sku %> — <%= c.product.volume %></p>
+        </div>
+
+        <h1 class="display"><%= c.product.name %>.<br>The one bottle that does the <em>whole job</em>.</h1>
+
+        <p class="lede hero__sub"><%= c.product.heroSub %></p>
+
+        <div class="hero__cta">
+          <button class="btn btn--accent" data-add-to-bag>Add to bag</button>
+          <a class="btn btn--ghost" href="/features">Read the full spec</a>
+          <span class="hero__price">
+            <% if (c.product.compareAtMinor && c.product.compareAtMinor > c.product.priceMinor) { %><s><%= money(c.product.compareAtMinor) %></s><% } %>
+            <b><%= money(c.product.priceMinor) %></b> · <%= c.product.volume %>
+          </span>
+        </div>
+      </div>
+
+      <figure class="plinth">
+        <picture>
+          <source srcset="<%= c.product.images.hero.src1x %> 1x, <%= c.product.images.hero.src2x %> 2x" type="image/webp">
+          <img src="<%= c.product.images.hero.fallback %>"
+               width="<%= c.product.images.hero.width %>"
+               height="<%= c.product.images.hero.height %>"
+               alt="<%= c.product.images.hero.alt %>"
+               fetchpriority="high" decoding="async">
+        </picture>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ------------------------------------------------------- marquee --- -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <% for (let r = 0; r < 2; r++) { %>
+        <% c.product.marquee.forEach(function (m) { %><span><%= m %></span><% }) %>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- ---------------------------------------------- positioning band --- -->
+  <section class="sec sec--dark">
+    <div class="wrap statement-grid">
+      <p class="statement">Slime chemistry has exactly one hard part. <em>We put it in the bottle.</em></p>
+      <dl class="statement-notes">
+        <div>
+          <dt>The problem</dt>
+          <dd>Three ingredients, measured by eye, by a child, in a hurry. The failure rate is the recipe, not the cook.</dd>
+        </div>
+        <div>
+          <dt>What we changed</dt>
+          <dd>The buffer and the cross-linker are pre-mixed at the correct ratio, so the only variable left is how much you pour.</dd>
+        </div>
+        <div>
+          <dt>What you get</dt>
+          <dd>Roughly forty batches from one <%= c.product.volume %> bottle, each one behaving like the last.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- -------------------------------------------------------- pillars --- -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec__head sec__head--split" data-rise>
+        <h2 class="display">Three reasons it<br>sits on the shelf.</h2>
+        <p class="lede">Not a range. Not a starter kit. A single bottle that solves a single, specific, extremely annoying problem — and a product page that tells you exactly what is inside it.</p>
+      </div>
+
+      <div class="pillars" data-rise>
+        <article class="pillar">
+          <span class="pillar__n">01</span>
+          <h3>One step, not three</h3>
+          <p>No baking soda. No contact lens solution. No saline. Pour, stir, knead — the ratio is already decided for you.</p>
+        </article>
+        <article class="pillar">
+          <span class="pillar__n">02</span>
+          <h3>Repeatable by design</h3>
+          <p>The same pour gives the same slime, which is what makes it usable in a classroom of thirty rather than a kitchen of one.</p>
+        </article>
+        <article class="pillar">
+          <span class="pillar__n">03</span>
+          <h3>Built for small hands</h3>
+          <p>Washable from skin and fabric, unscented, uncoloured, and dispensed through a metered flip-top that will not empty itself.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ----------------------------------------------------- buy module --- -->
+  <section class="sec sec--sunk">
+    <div class="wrap cart-grid">
+      <div data-rise>
+        <p class="eyebrow">Order</p>
+        <h2 class="display"><%= c.product.name %> — <%= c.product.subtitle %></h2>
+        <p class="lede"><%= c.product.shortDescription %></p>
+        <p class="lede"><a class="link-u" href="/features">Every specification, in full →</a></p>
+      </div>
+
+      <div class="buy" data-rise>
+        <div class="buy__price">
+          <strong><%= money(c.product.priceMinor) %></strong>
+          <% if (c.product.compareAtMinor && c.product.compareAtMinor > c.product.priceMinor) { %>
+            <s><%= money(c.product.compareAtMinor) %></s>
+            <span class="save">Save <%= Math.round(100 - (c.product.priceMinor / c.product.compareAtMinor) * 100) %>%</span>
+          <% } %>
+        </div>
+        <p class="buy__stock"><%= c.product.stockNote %></p>
+
+        <div class="qty" role="group" aria-label="Quantity">
+          <button type="button" data-qty-dec aria-label="Decrease quantity">−</button>
+          <output data-qty-out aria-live="polite">1</output>
+          <button type="button" data-qty-inc aria-label="Increase quantity">+</button>
+        </div>
+
+        <button class="btn btn--accent btn--block" data-add-to-bag data-use-qty>Add to bag</button>
+
+        <ul class="trust">
+          <% c.checkout.trustPoints.forEach(function (t) { %><li><%= t %></li><% }) %>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<%- include('partials/footer') %>
