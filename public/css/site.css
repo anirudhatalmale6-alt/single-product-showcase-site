@@ -1,24 +1,26 @@
 @import url("/fonts/fonts.css");
 
 /* ============================================================================
-   ALCHEMY & CO. — single product showcase
-   Aesthetic: warm paper, hairline rules, a laboratory specimen sheet given
-   editorial treatment. Display serif against a grotesque, with a mono used
-   only for data. One accent, lifted from the bottle cap.
+   Single product showcase
+   Aesthetic: a technical specimen sheet given editorial treatment — cool
+   paper, hairline rules, a display serif against a grotesque, and a mono
+   reserved strictly for data. One accent, lifted from the product itself.
+
+   To re-skin the whole site, change the eleven values below and nothing else.
    ========================================================================== */
 
 :root {
-  --paper:      #F4F0E9;
-  --paper-sunk: #EBE5DA;
+  --paper:      #F1F1EF;
+  --paper-sunk: #E6E6E3;
   --card:       #FFFFFF;
-  --ink:        #16130F;
-  --ink-soft:   #423C34;
-  --muted:      #837B6F;
-  --faint:      #A79E91;
-  --rule:       #DDD5C8;
-  --rule-soft:  #E8E1D6;
-  --accent:     #BE4219;
-  --accent-lit: #E8683B;
+  --ink:        #121316;
+  --ink-soft:   #3C3F45;
+  --muted:      #767A82;
+  --faint:      #9DA2AA;
+  --rule:       #D8D9D6;
+  --rule-soft:  #E6E6E3;
+  --accent:     #0B5FD0;
+  --accent-lit: #3B8CF7;
 
   --serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
   --sans:  "Archivo", "Helvetica Neue", Helvetica, sans-serif;
@@ -285,14 +287,14 @@ p { text-wrap: pretty; }
   left: 50%; bottom: 4px;
   width: min(74%, 300px); height: 22px;
   transform: translateX(-50%);
-  background: radial-gradient(50% 50% at 50% 50%, rgba(22,19,15,0.22), transparent 72%);
+  background: radial-gradient(50% 50% at 50% 50%, rgba(18,19,22,0.22), transparent 72%);
   filter: blur(3px);
 }
 .plinth img {
   position: relative;
   width: auto;
   max-height: clamp(300px, 40vw, 500px);
-  filter: drop-shadow(0 22px 34px rgba(22, 19, 15, 0.16));
+  filter: drop-shadow(0 22px 34px rgba(18, 19, 22, 0.18));
 }
 
 /* --------------------------------------------------------------- marquee */
@@ -330,9 +332,9 @@ p { text-wrap: pretty; }
 .sec { padding-block: clamp(64px, 9vw, 130px); }
 .sec--sunk { background: var(--paper-sunk); border-block: 1px solid var(--rule); }
 .sec--dark { background: var(--ink); color: var(--paper); }
-.sec--dark .eyebrow { color: #9A9184; }
-.sec--dark .lede { color: #CFC7BA; }
-.sec--dark .rule { background: #332D26; }
+.sec--dark .eyebrow { color: #8E949D; }
+.sec--dark .lede { color: #C4C8CE; }
+.sec--dark .rule { background: #2A2D33; }
 
 .sec__head { display: grid; gap: 18px; margin-bottom: clamp(34px, 4.6vw, 62px); }
 .sec__head--split {
@@ -350,7 +352,7 @@ p { text-wrap: pretty; }
   line-height: 1.08;
   letter-spacing: -0.015em;
   margin: 0;
-  max-width: 17ch;
+  max-width: 21ch;
 }
 .statement em { font-style: italic; color: var(--accent-lit); }
 
@@ -366,7 +368,7 @@ p { text-wrap: pretty; }
 .statement-notes { display: grid; gap: 26px; padding-top: 10px; }
 .statement-notes > div { display: grid; gap: 7px; }
 .statement-notes dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent-lit); }
-.statement-notes dd { margin: 0; font-size: 15px; line-height: 1.6; color: #CFC7BA; }
+.statement-notes dd { margin: 0; font-size: 15px; line-height: 1.6; color: #C4C8CE; }
 
 /* ------------------------------------------------------------- pillar row */
 
@@ -821,7 +823,7 @@ p { text-wrap: pretty; }
   font-size: 13.5px;
   z-index: 500;
   transition: transform 0.45s var(--ease), opacity 0.3s var(--ease), visibility 0.45s;
-  box-shadow: 0 12px 30px rgba(22,19,15,0.22);
+  box-shadow: 0 12px 30px rgba(18,19,22,0.22);
   white-space: nowrap;
 }
 .toast.is-on { transform: translate(-50%, 0); opacity: 1; visibility: visible; }

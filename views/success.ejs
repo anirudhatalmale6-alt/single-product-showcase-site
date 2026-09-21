@@ -57,9 +57,12 @@
           <dt>Delivery</dt>
           <dd><%= order.shippingMinor ? order.currencySymbol + (order.shippingMinor / 100).toFixed(2) : 'Free' %></dd>
         </div>
+        <%# Don't print "AED 94.99 AED" - some currencies use their code as the
+            symbol, in which case the trailing code is a duplicate. %>
+        <% const showCode = String(order.currencySymbol).trim().toUpperCase() !== order.currency; %>
         <div class="tot">
           <dt>Total paid</dt>
-          <dd><%= order.currencySymbol %><%= (order.totalMinor / 100).toFixed(2) %> <%= order.currency %></dd>
+          <dd><%= order.currencySymbol %><%= (order.totalMinor / 100).toFixed(2) %><%= showCode ? ' ' + order.currency : '' %></dd>
         </div>
       </dl>
 

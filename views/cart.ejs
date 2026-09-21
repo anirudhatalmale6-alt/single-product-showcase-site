@@ -15,12 +15,13 @@
         <div class="line__thumb">
           <picture>
             <source srcset="<%= c.product.images.hero.src1x %>" type="image/webp">
-            <img src="<%= c.product.images.hero.fallback %>" alt="<%= c.product.images.hero.alt %>" width="96" height="213">
+            <img src="<%= c.product.images.hero.fallback %>" alt="<%= c.product.images.hero.alt %>"
+                 width="<%= c.product.images.hero.width %>" height="<%= c.product.images.hero.height %>">
           </picture>
         </div>
         <div>
           <h2><%= c.product.name %></h2>
-          <p class="line__meta"><%= c.product.subtitle %> · <%= c.product.volume %> · <%= c.product.sku %></p>
+          <p class="line__meta"><%= c.product.subtitle %> · <%= c.product.spec %> · <%= c.product.sku %></p>
           <div class="line__foot">
             <div class="qty" role="group" aria-label="Quantity">
               <button type="button" data-qty-dec aria-label="Decrease quantity">−</button>

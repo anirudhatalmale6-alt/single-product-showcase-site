@@ -1,207 +1,224 @@
 {
   "_readme": "THIS FILE IS THE ONLY FILE YOU NEED TO EDIT TO CHANGE COPY, IMAGES OR PRICE. Save it and refresh the browser - no rebuild, no deploy step. See README.md section 'Editing the site'.",
+
   "brand": {
-    "name": "ALCHEMY & CO.",
-    "shortName": "ALCHEMY",
-    "tagline": "Craft chemistry, perfected.",
-    "positioning": "One bottle. One job. Done properly.",
+    "name": "AXIOM INSTRUMENTS",
+    "shortName": "AXIOM",
+    "symbol": "·",
+    "tagline": "Instruments for people who show their working.",
+    "positioning": "One calculator. Every exam you are going to sit.",
     "supportEmail": "orders@example.com",
-    "legalName": "Alchemy & Co. Ltd",
+    "legalName": "Axiom Instruments FZ-LLC",
     "address": "PLACEHOLDER - your registered address",
-    "instagram": "",
     "url": "http://localhost:3000"
   },
+
   "product": {
-    "sku": "ALC-ML-258",
-    "name": "Magical Liquid",
-    "subtitle": "Slime Activator",
-    "volume": "258 mL",
-    "priceMinor": 1290,
-    "currency": "usd",
-    "currencySymbol": "$",
-    "compareAtMinor": 1690,
-    "shippingMinor": 495,
-    "freeShippingOverMinor": 3500,
+    "sku": "AX-FX991EX",
+    "name": "FX-991EX",
+    "subtitle": "Scientific Calculator",
+    "spec": "552 functions",
+    "priceMinor": 7999,
+    "currency": "aed",
+    "currencySymbol": "AED ",
+    "compareAtMinor": 0,
+    "shippingMinor": 1500,
+    "freeShippingOverMinor": 15000,
     "maxQty": 10,
     "inStock": true,
     "stockNote": "In stock — dispatched within 1 business day",
-    "shortDescription": "A single-step activator that turns ordinary PVA glue into stretchable, non-sticky slime. No borax powder to measure. No contact-lens solution. No baking soda. One bottle, one pour.",
-    "heroHeadline": "The one bottle\nthat does the\nwhole job.",
-    "heroSub": "Magical Liquid replaces the three-ingredient guesswork of slime-making with a single measured pour. Consistent every time, child-friendly, and washable.",
+    "shortDescription": "552 functions, a natural textbook display that writes fractions and integrals the way your textbook does, and solar power backed by a battery so it never dies mid-exam. Built for the whole run from high-school algebra to an engineering degree.",
+    "heroSub": "A calculator you buy once, at the start of high school, and hand back at the end of a degree. Natural textbook display, 552 functions, solar-first power.",
     "images": {
       "hero": {
         "src1x": "/img/product-1x.webp",
         "src2x": "/img/product-2x.webp",
         "fallback": "/img/product-1x.png",
-        "width": 196,
-        "height": 429,
-        "alt": "A 258 mL bottle of Magical Liquid slime activator with an orange cap"
+        "width": 216,
+        "height": 445,
+        "alt": "The FX-991EX scientific calculator, showing its four-line display and full function keypad"
       }
     },
-    "marquee": ["Washable", "Child friendly", "258 mL", "No borax powder", "Works with any PVA glue", "1-step activation" ]
+    "marquee": ["552 functions", "Natural textbook display", "Solar + battery", "Spreadsheet mode", "4 × 4 matrices", "Slide-on hard case"]
   },
+
+  "home": {
+    "heroHeadlineHtml": "FX-991EX.<br>The last calculator<br>you will <em>need to buy</em>.",
+    "statementHtml": "Most calculators make you translate your maths into their notation. <em>This one does not.</em>",
+    "statementNotes": [
+      { "dt": "The problem", "dd": "A one-line display forces you to flatten a fraction, an integral or a surd into a string of brackets — and that translation is where the marks get lost." },
+      { "dt": "What changes", "dd": "The natural textbook display renders the expression the way it is printed in the book, so what you type is what you meant, and you can see it before you press equals." },
+      { "dt": "What you get", "dd": "Fewer input errors, faster checking, and a calculator that carries from algebra through to an engineering degree." }
+    ],
+    "pillarsTitleHtml": "Three reasons it<br>outlasts the course.",
+    "pillarsLede": "Not a range. One instrument, chosen because it covers the whole span from a first trigonometry class to a final-year engineering paper without ever being the limiting factor.",
+    "pillars": [
+      { "n": "01", "title": "Reads like the textbook", "body": "Fractions stacked, roots under the radical, integrals with proper limits. You check your input by looking at it, not by counting brackets." },
+      { "n": "02", "title": "552 functions, one menu", "body": "Statistics, matrices, vectors, complex numbers, base-n, equation solving and a spreadsheet — all reachable from a single MENU key rather than three layers of SHIFT." },
+      { "n": "03", "title": "Solar first, battery second", "body": "It runs off the light in the room and only draws on the cell when the light goes. No dead calculator on the morning of an exam." }
+    ]
+  },
+
   "features": {
     "intro": "Everything below is the product, in full. Read the part you need — the page is built so you can jump straight to it.",
+
     "detail": {
       "eyebrow": "01 — Detailed description",
       "title": "What it is, and what it actually does",
-      "lede": "Magical Liquid is a buffered borate solution engineered to cross-link polyvinyl acetate — the polymer in ordinary white school glue — into a stable, elastic gel. That is the whole of slime chemistry, and this bottle is the whole of the recipe.",
+      "lede": "The FX-991EX is a non-programmable scientific calculator built around one idea: the calculator should display mathematics the way it is written, not the way a 1980s seven-segment display forced it to be written. Everything else follows from that.",
       "blocks": [
         {
-          "heading": "One pour replaces three ingredients",
-          "body": "The usual kitchen method asks for baking soda, contact lens solution and a lot of hope. Each is doing a separate job, and each is easy to get wrong — too little and the mix stays sticky, too much and it snaps like putty. Magical Liquid is pre-buffered, so the alkalinity and the cross-linker arrive together in the correct ratio. You pour, you stir, it works.",
-          "image": "/img/detail-label.webp",
-          "imageAlt": "Close crop of the printed front label",
-          "imageWidth": 585,
-          "imageHeight": 510
+          "heading": "The display shows the maths, not a transcription of it",
+          "body": "A four-line dot-matrix display renders expressions in their printed form — a fraction as a fraction, a root under its radical, an integral with its limits in place. It matters more than it sounds. On a single-line calculator you flatten the expression into brackets before you type it, and that flattening is where mistakes are made and never spotted. Here you read back what you entered and compare it against the page.",
+          "image": "/img/detail-display.webp",
+          "imageAlt": "Close crop of the four-line dot-matrix display showing the function menu",
+          "imageWidth": 635,
+          "imageHeight": 267
         },
         {
-          "heading": "Consistent from the first batch to the last",
-          "body": "Because the ratio is fixed in the bottle rather than in the bowl, batch two comes out like batch one. That matters more than it sounds: it is the difference between a classroom of thirty working slimes and a classroom of thirty different failures, and it is why this is the format we sell.",
-          "image": "/img/detail-cap.webp",
-          "imageAlt": "Close crop of the flip-top dispensing cap",
-          "imageWidth": 570,
-          "imageHeight": 420
+          "heading": "552 functions, reachable without a manual",
+          "body": "Statistics and regression, matrices to 4 × 4, vectors, complex numbers, base-n arithmetic, numerical integration and differentiation, an equation solver, a table generator and a spreadsheet mode. All of it sits behind one MENU key instead of a second and third shift layer, which is the difference between a feature existing and a feature being used.",
+          "image": "/img/detail-keys.webp",
+          "imageAlt": "Close crop of the numeric keypad with the blue DEL and AC keys",
+          "imageWidth": 649,
+          "imageHeight": 464
         },
         {
-          "heading": "Made to be handled by children",
-          "body": "Washable from skin, from clothes and from most hard surfaces with warm water. The flip-top cap meters the pour so a tipped bottle does not empty itself across a table. Adult supervision is still the rule — this is a craft chemical, not a toy — but it is formulated on the assumption that small hands will be holding it.",
-          "image": "/img/detail-base.webp",
-          "imageAlt": "Close crop of the volume marking and fine print",
-          "imageWidth": 585,
-          "imageHeight": 360
+          "heading": "Sized for a hand and an exam desk",
+          "body": "Slim enough to sit beside a paper without crowding it, with a slide-on hard cover that protects the keypad in a bag and doubles as a stand. Non-programmable by design, which is precisely what makes it admissible in the exam rooms that ban everything else.",
+          "image": "/img/detail-inhand.webp",
+          "imageAlt": "The calculator held in one hand, showing its scale",
+          "imageWidth": 649,
+          "imageHeight": 655
         }
       ]
     },
+
     "specs": {
       "eyebrow": "02 — Technical specifications",
       "title": "The numbers",
-      "note": "PLACEHOLDER VALUES. Replace every figure in this table with the real values from your supplier's spec sheet before you take live payments.",
+      "note": "PLACEHOLDER VALUES. Replace every figure in this table with the real values from your supplier's spec sheet before you take live payments — especially the exam-board line, which is a compliance claim.",
       "groups": [
+        {
+          "group": "Display",
+          "rows": [
+            ["Type", "Natural textbook display"],
+            ["Resolution", "192 × 63 dots"],
+            ["Lines shown", "4"],
+            ["Digits", "10 + 2 exponent"],
+            ["Contrast", "Adjustable"]
+          ]
+        },
+        {
+          "group": "Capability",
+          "rows": [
+            ["Total functions", "552"],
+            ["Independent memories", "9 variables + Ans"],
+            ["Matrices", "Up to 4 × 4"],
+            ["Vectors", "Up to 3 dimensions"],
+            ["Equation solver", "Up to 4 unknowns"],
+            ["Spreadsheet", "5 columns × 45 rows"],
+            ["Integration", "Numerical, definite"],
+            ["Base-n", "Binary, octal, decimal, hex"]
+          ]
+        },
+        {
+          "group": "Power",
+          "rows": [
+            ["Primary", "Solar cell"],
+            ["Backup", "1 × LR44 button cell"],
+            ["Battery life", "Approx. 2 years, typical use"],
+            ["Auto power off", "After 10 minutes idle"]
+          ]
+        },
         {
           "group": "Physical",
           "rows": [
-            ["Net volume", "258 mL / 8.7 fl oz"],
-            ["Form", "Clear low-viscosity liquid"],
-            ["Viscosity @ 20 °C", "3–6 mPa·s"],
-            ["Density", "1.02 g/cm³"],
-            ["pH", "8.2 – 8.8"],
-            ["Colour", "Colourless to faint straw"],
-            ["Odour", "Effectively none"]
+            ["Dimensions", "165.5 × 77 × 11.1 mm"],
+            ["Weight", "90 g including cover"],
+            ["Case", "Slide-on hard cover"],
+            ["Keypad", "Moulded plastic keys"],
+            ["Colour", "Black"]
           ]
         },
         {
-          "group": "Composition",
+          "group": "Use & compliance",
           "rows": [
-            ["Base", "Purified water"],
-            ["Active", "Buffered sodium borate solution"],
-            ["Preservative system", "Yes"],
-            ["Added fragrance", "None"],
-            ["Added colourant", "None"]
+            ["Programmable", "No — by design"],
+            ["Exam suitability", "PLACEHOLDER — confirm against each board"],
+            ["Age / level", "High school through undergraduate"],
+            ["Languages", "English menus"]
           ]
         },
         {
-          "group": "Use & yield",
+          "group": "In the box",
           "rows": [
-            ["Dosage", "≈ 1 tsp (5 mL) per 120 mL PVA glue"],
-            ["Yield", "Up to 40 standard batches"],
-            ["Working time", "Stir 30–60 s, rest 2 min"],
-            ["Compatible with", "Any PVA / white school glue, clear or opaque"],
-            ["Not compatible with", "Solvent-based adhesives, epoxies"]
-          ]
-        },
-        {
-          "group": "Storage & life",
-          "rows": [
-            ["Shelf life, unopened", "24 months"],
-            ["Shelf life, opened", "12 months"],
-            ["Storage temperature", "5 – 30 °C"],
-            ["Keep away from", "Direct sunlight, frost"]
-          ]
-        },
-        {
-          "group": "Packaging",
-          "rows": [
-            ["Bottle", "HDPE, recyclable"],
-            ["Closure", "Polypropylene flip-top, metered"],
-            ["Label", "Bilingual EN / FR"],
-            ["Unit weight", "≈ 290 g"],
-            ["Case pack", "12 units"]
-          ]
-        },
-        {
-          "group": "Compliance",
-          "rows": [
-            ["Safety datasheet", "Supplied on request"],
-            ["Age guidance", "3+ with adult supervision"],
-            ["Washability", "Washable from skin and most fabrics"],
-            ["Country of origin", "PLACEHOLDER"]
+            ["Calculator", "1"],
+            ["Hard cover", "1"],
+            ["Battery", "Fitted"],
+            ["Quick-start guide", "1"],
+            ["Warranty", "PLACEHOLDER"]
           ]
         }
       ]
     },
+
     "usage": {
       "eyebrow": "03 — Usage scenarios",
-      "title": "Where a bottle like this actually earns its place",
-      "lede": "Five situations we hear about constantly. If yours is on this list, the 258 mL bottle is almost certainly the right size to start with.",
+      "title": "Where a calculator like this earns its keep",
+      "lede": "Five situations we hear about constantly. If yours is on this list, this is almost certainly the right instrument to start with.",
       "scenarios": [
         {
-          "tag": "Classroom",
-          "title": "Thirty children, forty minutes, one adult",
-          "body": "A single bottle covers a full class set with room to spare, and because the ratio is fixed you are not running between tables rescuing sticky bowls. Teachers tend to buy it for the predictability rather than the chemistry.",
-          "metric": "≈ 40 batches per bottle",
-          "steps": ["Pre-measure glue into cups", "One metered pour per cup", "Stir 30 s, rest 2 min", "Knead to finish" ]
+          "tag": "High school",
+          "title": "Algebra, trigonometry, and a syllabus that keeps growing",
+          "body": "The point at which most students buy their first scientific calculator, and the point at which most buy the wrong one. Anything that cannot display a stacked fraction will be replaced within two years.",
+          "metric": "Covers the full syllabus",
+          "steps": ["Enter the expression as printed", "Read it back against the page", "Toggle exact ↔ decimal with S⇔D", "Store intermediate values in A–F"]
         },
         {
-          "tag": "At home",
-          "title": "A rainy Saturday that does not end in tears",
-          "body": "The failure mode of kitchen slime is a bowl of sticky white mess and a disappointed child. Removing the measuring step removes the failure. Washable formula means the kitchen table survives too.",
-          "metric": "Two-ingredient method",
-          "steps": ["Glue into a bowl", "Add Magical Liquid", "Stir until it pulls away", "Knead until smooth" ]
+          "tag": "University",
+          "title": "Engineering, calculus and linear algebra coursework",
+          "body": "Matrices, vectors, complex numbers and numerical integration in one device, so problem sheets do not require a laptop. The functions that matter at degree level are the ones buried two menus deep on cheaper models.",
+          "metric": "4 × 4 matrices, 3-D vectors",
+          "steps": ["MENU → Matrix", "Define A and B", "Run the operation", "Read the result in full precision"]
         },
         {
-          "tag": "Sensory & OT",
-          "title": "Sensory play and occupational therapy",
-          "body": "Consistent texture batch to batch is the point here — a predictable resistance you can rely on session after session. Unscented and uncoloured by design, so it does not fight with sensory sensitivities.",
-          "metric": "Unscented, uncoloured",
-          "steps": ["Make to standard ratio", "Adjust firmness with a few extra drops", "Store airtight between sessions" ]
+          "tag": "Statistics",
+          "title": "Data sets, regression and distributions",
+          "body": "Spreadsheet mode takes a column of data directly, so you are not re-keying a data set every time you want a different statistic. Regression and distribution functions read from the same table.",
+          "metric": "5 × 45 spreadsheet",
+          "steps": ["MENU → Spreadsheet", "Key the data column", "Switch to Statistics", "Pull mean, σ and regression"]
         },
         {
-          "tag": "Makers",
-          "title": "Content, kits and craft markets",
-          "body": "If you are producing slime to sell or to film, the variable you cannot afford is the batch that comes out wrong on camera. Fixed ratio, repeatable result, and a case pack that keeps the unit cost sensible.",
-          "metric": "12-unit case pack",
-          "steps": ["Scale the ratio linearly", "Mix in batches of 1 L", "Rest before packing" ]
+          "tag": "Exam day",
+          "title": "The one on the permitted list",
+          "body": "Non-programmable, no wireless, no stored text. That is the specification exam boards actually check, and it is why a calculator like this is admissible where a graphing model is confiscated at the door.",
+          "metric": "Non-programmable",
+          "steps": ["Clear memory before entering", "Check the board's own list", "Cover off, on the desk", "Solar means no flat battery"]
         },
         {
-          "tag": "Parties",
-          "title": "Party stations and holiday clubs",
-          "body": "A station that runs itself. Pre-portion the glue, hand over the bottle with an adult on it, and the activity paces itself at roughly three minutes a child.",
-          "metric": "≈ 3 min per child",
-          "steps": ["Pre-portion glue cups", "One adult on the bottle", "Rotate children through", "Bag and label to take home" ]
+          "tag": "Lab & field",
+          "title": "Unit conversion, constants and quick checks",
+          "body": "Built-in scientific constants and unit conversions cover the routine arithmetic of a lab notebook without a lookup table. Light enough to live in a bag permanently.",
+          "metric": "90 g with cover",
+          "steps": ["Recall the constant", "Convert units in place", "Keep the running value in Ans", "Hard cover back on"]
         }
       ]
     },
+
     "faq": [
-      {
-        "q": "Does it work with clear glue as well as white?",
-        "a": "Yes. Clear PVA gives a glass-like slime and usually wants a slightly longer rest before kneading."
-      },
-      {
-        "q": "What if the slime is still sticky?",
-        "a": "Add a few more drops and keep kneading. Stickiness is almost always under-activation, not over-activation."
-      },
-      {
-        "q": "What if it has gone rubbery?",
-        "a": "Too much activator. A little warm water worked in by hand will bring it back most of the time."
-      },
-      {
-        "q": "Is it safe on skin?",
-        "a": "It is formulated for supervised craft use from age 3. Wash hands after handling and keep it out of eyes and mouths."
-      }
+      { "q": "Is it allowed in exams?", "a": "It is non-programmable, which is the property most boards test for. Always check the specific list published by your own exam board — that list is the authority, not us." },
+      { "q": "Does it need batteries?", "a": "It runs on solar in normal room light and falls back to an LR44 cell when the light is poor. The cell is fitted and typically lasts around two years." },
+      { "q": "Can it draw graphs?", "a": "No. It generates tables of values rather than plotting curves. If you need plotting you want a graphing calculator — and you should check whether your exam board permits one." },
+      { "q": "What is the difference from a cheaper scientific calculator?", "a": "The display and the function count. A basic model shows one line and around 240 functions; this shows four lines in textbook notation and covers 552, including matrices, vectors and the spreadsheet." }
     ]
   },
+
   "checkout": {
-    "trustPoints": ["Payments processed by Stripe — card details never touch this server", "Dispatched within 1 business day", "30-day returns on unopened bottles" ]
+    "trustPoints": [
+      "Payments processed by Stripe — card details never touch this server",
+      "Dispatched within 1 business day",
+      "30-day returns on unopened items"
+    ]
   }
 }

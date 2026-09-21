@@ -4,9 +4,10 @@ A one-product website: hero, a Features page (detailed description, technical
 specifications, usage scenarios), and a working add-to-cart → checkout →
 confirmation flow with an order confirmation email.
 
-The product currently shown — **Elmer's Magical Liquid** — is the placeholder
-example supplied for the build. Replace it with the real product before the
-site goes live. Section 2 below is the only file you have to touch to do that.
+The product currently shown — an **FX-991EX scientific calculator at AED 79.99**
+— is the placeholder example supplied for the build. The brand, **AXIOM
+INSTRUMENTS**, is invented for the same reason. Replace both before the site
+goes live. Section 2 below is the only file you have to touch to do that.
 
 ---
 
@@ -38,26 +39,40 @@ Save it and refresh the browser. There is no build step and nothing to redeploy.
 | What you want to change | Where in `content/product.json` |
 | --- | --- |
 | Brand name, tagline, support email | `brand.*` |
-| Product name, subtitle, volume, SKU | `product.*` |
+| Product name, subtitle, SKU | `product.*` |
+| The short spec beside the price ("552 functions") | `product.spec` |
 | **Price** | `product.priceMinor` |
-| Crossed-out "was" price | `product.compareAtMinor` (set to `0` to hide it) |
+| **Currency** | `product.currency` + `product.currencySymbol` |
+| Crossed-out "was" price | `product.compareAtMinor` (`0` hides it) |
 | Delivery charge | `product.shippingMinor` |
 | Free-delivery threshold | `product.freeShippingOverMinor` |
 | Max units per order | `product.maxQty` |
 | "In stock" line | `product.inStock`, `product.stockNote` |
+| Hero headline | `home.heroHeadlineHtml` |
 | Hero paragraph | `product.heroSub` |
 | Scrolling strip of words | `product.marquee` |
+| The dark statement band | `home.statementHtml`, `home.statementNotes` |
+| The three-column pillar row | `home.pillarsTitleHtml`, `home.pillarsLede`, `home.pillars` |
 | The three description blocks | `features.detail.blocks` |
 | The specification tables | `features.specs.groups` |
 | The five usage scenarios | `features.usage.scenarios` |
 | FAQ | `features.faq` |
 | Reassurance lines by the buy button | `checkout.trustPoints` |
 
+The three `…Html` fields are the only ones where markup is allowed, and only
+`<br>` and `<em>` (the italic accent colour). Everything else on the site is
+escaped, so a `<` in your copy is safe and will simply appear as a `<`.
+
 ### Prices are in minor units
 
-`priceMinor` is **cents, as a whole number**. `1290` is $12.90. `900` is $9.00.
-Never write `12.90` — floating point and money do not mix, and the file will be
-rejected on startup if you do.
+`priceMinor` is **the smallest unit of your currency, as a whole number**.
+`7999` is AED 79.99. `900` is AED 9.00. Never write `79.99` — floating point and
+money do not mix, and the file is rejected on startup if you try.
+
+`currency` must be the lower-case ISO code Stripe expects (`aed`, `usd`, `gbp`),
+and `currencySymbol` is whatever you want printed in front of the number. If the
+symbol is the code itself (`"AED "` — note the trailing space) the site is smart
+enough not to print "AED 94.99 AED" on the receipt.
 
 ### Changing the images
 
@@ -73,10 +88,10 @@ Drop new files into `public/img/` and point `product.images.hero` at them.
 The three images in `features.detail.blocks[].image` work the same way; each
 has its own `imageWidth` / `imageHeight`.
 
-> **On image quality:** the current shots are cut out of a 400 × 546 px web
-> image, which is all that was available. They are sharp enough at the sizes
-> used, but real product photography at 2000 px or more on the long edge will
-> look noticeably better, especially on phones.
+> **On image quality:** the current shots are cut out of a marketplace listing
+> screenshot, which is all that was available. They are sharp enough at the
+> sizes used, but real product photography at 2000 px or more on the long edge
+> will look noticeably better, especially on phones.
 
 ### If you break the JSON
 
@@ -202,10 +217,11 @@ WantedBy=multi-user.target
 
 ### Before you take real money
 
-- [ ] Replace the placeholder product, copy and images with the real ones
+- [ ] Replace the placeholder product, brand, copy and images with the real ones
 - [ ] Replace **every** figure in the specifications table — they are marked
-      `PLACEHOLDER` on the page for exactly this reason
-- [ ] Set the real price, delivery charge and free-delivery threshold
+      `PLACEHOLDER` on the page for exactly this reason. The exam-suitability
+      row in particular is a compliance claim and must not be guessed
+- [ ] Set the real price, currency, delivery charge and free-delivery threshold
 - [ ] Set `brand.supportEmail`, `brand.legalName` and `brand.address`
 - [ ] Live Stripe keys in, `payments: live` confirmed in the logs
 - [ ] SMTP configured, and a test order's confirmation email actually received
